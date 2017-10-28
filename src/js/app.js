@@ -124,7 +124,7 @@ export default class App {
 
     this._socket.on('disconnect', (data) => {
       this._darkwire.connected = false;
-      this._chat.log('與伺服器的連線中斷，將在4秒後重試。Disconnected from server, automatically reconnecting in 4 seconds.', {
+      this._chat.log('與伺服器的連線中斷，將在4秒後重試。', {
         error: true,
       });
       this.retryConnection();
