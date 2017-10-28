@@ -50,7 +50,7 @@ export default class App {
     });
 
     this._socket.on('rated', () => {
-      this._chat.log('You are sending messages to fast, please slow down. Your last message was ignored.', {
+      this._chat.log('您發送訊息的速度太快了，請放慢速度。您發送的上一條訊息已被忽略。', {
         error: true,
       });
     });
@@ -66,7 +66,7 @@ export default class App {
           $('#first-modal').modal('show');
         }
 
-        this._chat.log(data.username + ' joined');
+        this._chat.log(data.username + ' 已加入');
         this.renderParticipantsList();
       });
 
@@ -74,7 +74,7 @@ export default class App {
 
     this._socket.on('user update', (data) => {
       this._darkwire.updateUser(data).then((oldUsername) => {
-        this._chat.log(oldUsername + ' <span>changed name to</span> ' + data.username,
+        this._chat.log(oldUsername + ' <span>的名字已改成</span> ' + data.username,
           {
             classNames: 'changed-name'
           });
@@ -103,7 +103,7 @@ export default class App {
 
     // Whenever the server emits 'user left', log it in the chat body
     this._socket.on('user left', (data) => {
-      this._chat.log(data.username + ' left');
+      this._chat.log(data.username + ' 離開了');
       this.addParticipantsMessage(data);
       this._chat.removeChatTyping(data);
 
@@ -124,7 +124,7 @@ export default class App {
 
     this._socket.on('disconnect', (data) => {
       this._darkwire.connected = false;
-      this._chat.log('Disconnected from server, automatically reconnecting in 4 seconds.', {
+      this._chat.log('與伺服器的連線中斷，將在4秒後重試。Disconnected from server, automatically reconnecting in 4 seconds.', {
         error: true,
       });
       this.retryConnection();
@@ -192,7 +192,7 @@ export default class App {
         return windowHandler.fileHandler.encodeFile(fileId);
       }
 
-      return this._chat.log('Requested file transfer is no longer valid. Please try again.', {error: true});
+      return this._chat.log('請求的檔案傳輸無效，請重試。', {error: true});
     };
 
     window.triggerFileDestroy = (context) => {
@@ -201,7 +201,7 @@ export default class App {
         return windowHandler.fileHandler.destroyFile(fileId);
       }
 
-      return this._chat.log('Requested file transfer is no longer valid. Please try again.', {error: true});
+      return this._chat.log('請求的檔案傳輸無效，請重試。', {error: true});
     };
 
     window.triggerFileDownload = (context) => {
@@ -260,7 +260,7 @@ export default class App {
     let fs = window.requestFileSystem || window.webkitRequestFileSystem;
     if (fs) {
       fs(window.TEMPORARY, 100, () => {
-        this._chat.log('Your browser is not in incognito mode!', {warning: true});
+        this._chat.log('建議使用私密瀏覽模式！', {warning: true});
       });
     }
 
