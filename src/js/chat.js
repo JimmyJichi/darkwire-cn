@@ -193,14 +193,14 @@ export default class Chat {
           return this.log('Username must start with a letter.', {error: true});
         }
 
-        if (!warned) {
-          warned = false;
-          return this.log('Changing your username is currently in beta and your new username will be sent over the wire in plain text, unecrypted. This will be fixed in v2.0. If you really want to do this, type the command again.',
-          {
-            warning: false,
-            classNames: 'change-username-warning'
-          });
-        }
+//        if (!warned) {
+//          warned = true;
+//          return this.log('Changing your username is currently in beta and your new username will be sent over the wire in plain text, unecrypted. This will be fixed in v2.0. If you really want to do this, type the command again.',
+//          {
+//            warning: false,
+//            classNames: 'change-username-warning'
+//          });
+//        }
 
         this.darkwire.updateUsername(newUsername).then((socketData) => {
           let modifiedSocketData = {
