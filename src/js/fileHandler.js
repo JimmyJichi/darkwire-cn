@@ -33,13 +33,13 @@ export default class FileHandler {
       const fileExt = file.name.split('.').pop().toLowerCase();
 
       if (validFileTypes.indexOf(fileExt) <= -1) {
-        alert('file type not supported');
+        alert('不支援此檔案類型');
         return false;
       }
 
       // Support for only 1MB
       if (file.size > 1000000) {
-        alert('Max filesize is 1MB.');
+        alert('檔案不能超過 1MB。');
         return false;
       }
       let fileId = uuid.v4();
@@ -82,7 +82,7 @@ export default class FileHandler {
         fileName: this.sanitizeFileName(file.name)
       };
       this.darkwire.encodeMessage(base64, fileType, additionalData).then((socketData) => {
-        this.chat.replaceMessage('#transfer-' + fileId, 'Sent <strong>' + additionalData.fileName + '</strong>');
+        this.chat.replaceMessage('#transfer-' + fileId, '已發送 <strong>' + additionalData.fileName + '</strong>');
         this.socket.emit('new message', socketData);
       });
       this.resetInput();
@@ -95,7 +95,7 @@ export default class FileHandler {
     const file = _.findWhere(this.localFileQueue, {id: fileId});
     this.localFileQueue = _.without(this.localFileQueue, file);
     this.resetInput();
-    return this.chat.replaceMessage('#transfer-' + fileId, 'The file transfer for <strong>' + file.fileName + '</strong> has been canceled.');
+    return this.chat.replaceMessage('#transfer-' + fileId, '檔案 <strong>' + file.fileName + '</strong> 的傳輸已取消。');
   }
 
   createBlob(base64, fileType) {
