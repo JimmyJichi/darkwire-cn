@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>darkwire.io - encrypted web chat</title>
+    <title>Jimmy的加密通訊工具 Powered By Darkwire</title>
     <meta name="description" content="darkwire.io is the simplest way to chat with encryption online.">
     <link rel="shortcut icon" type="image/png" href="favicon.ico">
     <link rel="stylesheet" href="/vendor/bootstrap-switch.min.css">
@@ -39,9 +39,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a id="newRoom" href="#" target="_blank"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;New Room</a></li>
-            <li><a href="javascript:void(0)" id="settings-nav"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;Settings</a></li>
-            <li><a href="javascript:void(0)" id="about-nav"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>&nbsp;About</a></li>
+            <li><a id="newRoom" href="#" target="_blank"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;創建房間</a></li>
+            <li><a href="javascript:void(0)" id="settings-nav"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;設定</a></li>
+            <li><a href="javascript:void(0)" id="about-nav"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>&nbsp;關於</a></li>
           </ul>
         </div>
       </div>
@@ -52,12 +52,12 @@
         <div class="chatArea">
           <ul class="messages">
             <li class="log">
-              <p>Welcome to darkwire.io - encrypted chat</p>
+              <p>歡迎使用 Jimmy 的加密通訊工具 Powered by Darkwire.io</p>
             </li>
           </ul>
         </div>
         <div class="inputContainer">
-          <textarea class="inputMessage" placeholder="Type here..."/></textarea>
+          <textarea class="inputMessage" placeholder="訊息"/></textarea>
           <div id="input-icons">
             <span class="glyphicon glyphicon-file" id="send-file"></span>
             <input type="file" name="fileUploader" id="fileInput">
@@ -99,17 +99,17 @@
             <h4 class="modal-title">Settings</h4>
           </div>
           <div class="modal-body">
-            <h6>Invite People to This Room</h6>
+            <h6>邀請他人使用此網址來加入房間</h6>
             <p>
               <input type="text" class="form-control share-text" readonly>
             </p>
             <br>
-            <h6>Sound</h6>
+            <h6>聲音</h6>
             <input type="checkbox" name="sound-enabled" class="form-control bs-switch sound-enabled" checked>
             <br>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default encryption-active" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default encryption-active" data-dismiss="modal">關閉</button>
           </div>
         </div>
       </div>
