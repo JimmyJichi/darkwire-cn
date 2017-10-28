@@ -275,7 +275,7 @@ export default class Chat {
       expectedParams = commandToTrigger.paramaters.length;
       if (expectedParams && trigger.params.length > expectedParams || expectedParams && trigger.params.length < expectedParams) {
         if ((!commandToTrigger.multple && trigger.params.length < 1) || (trigger.params.length >= 1 && trigger.params[0] === '')) {
-          return this.log('Missing or too many paramater. Usage: ' + commandToTrigger.usage, {error: true});
+          return this.log('參數缺失或太多。用法: ' + commandToTrigger.usage, {error: true});
         }
       }
 
