@@ -1,7 +1,7 @@
 export default class AudioHandler {
   constructor() {
     this._beep = window.Audio && new window.Audio('beep.mp3') || false;
-    this._soundEnabled = false;
+    this._soundEnabled = true;
   }
 
   get soundEnabled() {
