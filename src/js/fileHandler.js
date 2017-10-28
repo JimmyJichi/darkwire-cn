@@ -44,7 +44,7 @@ export default class FileHandler {
       }
       let fileId = uuid.v4();
 
-      let confirmMessage = '<span id="transfer-' + fileId + '" class="file-presend-prompt">You are about to send <strong>' + fileName + '</strong> to all participants in this chat. <a class="file-trigger-confirm" onclick="triggerFileTransfer(this);" data-file="' + fileId + '">Confirm</a> | <a class="file-trigger-cancel" onclick="triggerFileDestroy(this)" data-file="' + fileId + '">Cancel</a></span>';
+      let confirmMessage = '<span id="transfer-' + fileId + '" class="file-presend-prompt">你正在向所有人發送 <strong>' + fileName + '</strong>。 <a nonce="fHPBryMU3z" class="file-trigger-confirm" onclick="triggerFileTransfer(this);" data-file="' + fileId + '">確定</a> | <a nonce="fHPBryMU3z" class="file-trigger-cancel" onclick="triggerFileDestroy(this)" data-file="' + fileId + '">取消</a></span>';
       let fileData = {
         id: fileId,
         file: file,
